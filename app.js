@@ -13,7 +13,7 @@ const passport = require('passport');
 
 
 mongoose.Promise = global.Promise;
-
+console.log('Connecting to ' + mongoDbURL);
 mongoose.connect(mongoDbURL).then((db)=>{
     console.log('MONGO connected');
 }).catch(error=> console.log(`ERROR CONNECTING TO MONGODB: ` + error));
