@@ -1,13 +1,33 @@
-<div class="form-group">
-    <form action="admin/generate-fake-posts" method="POST">
-        <h2>Generate Dummy Posts</h2>
-        <div class="form-group">
-            <input name="amount" type="text" class="form-control" style="width: 100px">
+<div class="form-group col-12">
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-5">
+            <form action="admin/generate-fake-posts" method="POST">
+                <h2>Generate Dummy Posts</h2>
+                <div class="form-group">
+                    <input name="amount" type="text" class="form-control" style="width: 100px">
+                </div>
+                <button type="submit" class="btn btn-dark btn-sm">Generate</button>
+            </form>
         </div>
-        <button type="submit" class="btn btn-dark btn-sm">Generate</button>
-    </form>
+        <div class="col-5">
+            <form action="admin/generate-fake-category" method="POST">
+                <h2>Generate Dummy Category</h2>
+                <div class="form-group">
+                    <input name="amount" type="text" class="form-control" style="width: 100px">
+                </div>
+                <button type="submit" class="btn btn-dark btn-sm">Generate</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-10">
+            <canvas id="myChart"></canvas>
+        </div>
+        <div class="col-1"></div>
+    </div>
+
 </div>
 
-<div class="row">
-    <canvas id="myChart"></canvas>
-</div>

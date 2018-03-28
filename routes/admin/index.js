@@ -66,6 +66,28 @@ router.post('/generate-fake-posts', (req, res)=>{
     }
 });
 
+router.post('/generate-fake-category', (req, res)=>{
+
+    if(req.user === undefined) {
+        req.flash('info_message', 'You need to login to generate records.');
+        res.redirect('/login');
+    } else {
+        
+        console.log('Creating ' + req.body.amount + ' dummy records.');
+        for(let i = 0; i < req.body.amount; i++) {
+
+            let category = new Category();
+            
+            category.name = faker.name.title();
+            category.save((err)=>{if (err) throw err;});
+            
+        }
+
+        console.log(`Done.`);
+        res.redirect('/admin/categories');
+    }
+});
+
 router.get('/dashboard', (req, res)=>{
    res.render('admin/dashboard');
 });
