@@ -83,6 +83,8 @@ app.use('/admin/posts', posts);
 app.use('/admin/categories', categories);
 app.use('/admin/comments', comments)
 
-app.listen(4500, ()=>{
-    console.log(`Listening to port 4500`);
+const port = process.env.PORT || 4500;
+
+app.listen(port, ()=>{
+    console.log(`Listening on port ${port}`);
 });
