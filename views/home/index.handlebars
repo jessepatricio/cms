@@ -1,0 +1,53 @@
+  <div class="row">
+
+        <!-- Blog Entries Column -->
+        <div class="col-md-8">
+
+          {{#if posts}}
+           <h1 class="my-4">Blog
+            <small>Technology Today</small>
+          </h1>
+        
+          <!-- Blog Post -->
+
+          {{#each posts}} 
+
+          <div class="card mb-4">
+            <img class="card-img-top" src="uploads/{{file}}" alt="Card image cap">
+            <div class="card-body">
+              <h2 class="card-title">{{title}}</h2>
+              <p class="card-text">{{body}}</p>
+              <a href="/posts/{{slug}}" class="btn btn-primary">Read More &rarr;</a>
+            </div>
+            <div class="card-footer text-muted">
+              Posted on {{formatDate date 'DD/MM/YY'}} by
+              <a href="#">{{user.firstname}}</a>
+            </div>
+          </div>
+
+         {{/each}}
+
+        
+          <!-- Pagination -->
+          <ul class="pagination justify-content-center mb-4">
+
+            {{#paginate current=current pages=pages}}{{/paginate}}
+           
+          </ul>
+
+          {{else}}
+          
+            <h1 class="my-4">You have no post!</h1>
+
+          {{/if}}
+
+        </div>
+
+        <!-- Sidebar Widgets Column -->
+        {{> home/sidebar}}
+
+
+      
+
+      </div>
+      <!-- /.row -->
